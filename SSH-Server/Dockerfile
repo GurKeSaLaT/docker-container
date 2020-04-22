@@ -2,6 +2,7 @@ FROM sickp/alpine-sshd
 # Set correct environment variables
 ENV HOME /root
 # Configure user nobody to match unRAID's settings
+
 RUN apk add shadow inofify-tools rsync && \
     usermod -u 99 nobody && \
     usermod -g 100 nobody && \
