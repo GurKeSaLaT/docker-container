@@ -9,5 +9,4 @@ RUN usermod -d /home nobody
 RUN chown -R nobody:users /home
 RUN passwd -d root
 COPY alpine.pub /root/.ssh/authorized_keys
-RUN chmod +x /scripts/watchdog.sh
-RUN /scripts/watchdog.sh
+RUN test -f /scripts/watchdog.sh && { chmod +x /scripts/watchdog.sh; /scripts/watchdog.sh }
