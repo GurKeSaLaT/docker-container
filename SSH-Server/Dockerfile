@@ -12,3 +12,4 @@ RUN apk update &&\
     passwd -d root
 COPY alpine.pub /root/.ssh/authorized_keys
 RUN "test -f /scripts/watchdog.sh" && { chmod +x /scripts/*.sh; /scripts/watchdog.sh; } || echo "no script in /scripts"
+ENTRYPOINT [ "/scripts/watchdog.sh" ]
