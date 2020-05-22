@@ -4,7 +4,7 @@ ENV HOME /root
 # Configure user nobody to match unRAID's settings
 
 RUN apk update &&\
-    apk add shadow inotify-tools rsync && \
+    apk add shadow inotify-tools rsync dos2unix && \
     usermod -u 99 nobody && \
     usermod -g 100 nobody && \
     usermod -d /home nobody && \
